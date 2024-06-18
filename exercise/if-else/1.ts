@@ -1,3 +1,4 @@
+const age = 25;
 // == Part 1 ==
 //
 // Write some code to allow or deny purchasing an item based on a given age. If
@@ -8,7 +9,18 @@
 // To acknowledge if the person is allowed to make the purchase, print out "OK
 // to purchase". To acknowledge if the person is now allowed to make the
 // puchase, print out "cannot purchase".
-//
+
+function canPurchase(age: number): boolean {
+    const allowPurchasing = age >= 18;
+    return allowPurchasing;
+}   
+
+if (canPurchase(age)) {
+  console.log("OK");
+} else {
+  console.log("cannot purchase");
+}
+
 // == Part 2 ==
 //
 // Write some code that can determine if a person is an adult, child,
@@ -25,6 +37,10 @@
 //
 // Check your code by changing the age to different values and confirm that the
 // correct messages are displayed.
-
-const age = 25;
-
+if (age < 18) {
+    console.log("child");
+} else if (age >= 65) {
+    console.log("senior");
+} else {
+    console.log("adult");
+}
