@@ -9,3 +9,19 @@ import { strict as assert } from "assert";
 //
 // Useful links:
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
+
+type PersonName = string;
+const myName: PersonName = "Jason";
+const alsoMyName: string = "Jason";
+
+// bad
+function print(thing: string) {
+    console.log(`My name is ${thing}`);
+}
+
+// good
+function printName(name: PersonName) {
+    console.log(`My name is ${name}`);
+}
+
+printName(myName);
