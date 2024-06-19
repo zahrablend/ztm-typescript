@@ -10,3 +10,19 @@
 
 import { strict as assert } from "assert";
 
+function cToF(degreesC: number): number {
+    return (degreesC * 1.8) + 32;
+}
+
+function fToC(degreesF: number): number {
+    return (degreesF - 32) / 1.8;
+}
+
+
+
+function conversion(temp: number, toUnit: "C" | 'F'): number {
+    return toUnit === "C" ? fToC(temp) : cToF(temp);
+}
+
+assert.equal(conversion(25, "F"), 77);
+assert.equal(conversion(68, "C"), 20);
