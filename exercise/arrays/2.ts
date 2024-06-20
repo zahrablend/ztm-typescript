@@ -9,14 +9,6 @@
 //
 // Finally, the organizers need to ability to adjust the total duration of each
 // presentation in case someone drops out.
-//
-// Perform the following:
-// 1. Create an array containing all vendors with a "small" sized space having
-//    10 or less units
-// 2. Determine if any vendors have a space of size 13
-// 3. Add 3 minutes to all presentation durations
-//
-// Run the program to test the existing assertions.
 
 import { strict as assert } from "assert";
 
@@ -27,8 +19,9 @@ const vendors = [
 ];
 
 
-// perform step 1 here
-const smallSpaces = []; // ...
+// 1. Create an array containing all vendors with a "small" sized space having
+//    10 or less units
+const smallSpaces = vendors.filter(element => element.size <= 10);
 
 assert.deepStrictEqual(smallSpaces, (() => {
   const cloned = Array.from(vendors);
@@ -36,13 +29,16 @@ assert.deepStrictEqual(smallSpaces, (() => {
   return cloned;
 })());
 
-// perform step 2 here
-const sizeExists = []; // ...
+// 2. Determine if any vendors have a space of size 13
+const sizeExists = vendors.some(element => element.size === 13);
 
 assert.equal(sizeExists, true);
 
-// perform step 3 here
-const updatedDuration = []; // ...
+// 3. Add 3 minutes to all presentation durations
+const updatedDuration = vendors.map(element => ({
+  ...element,
+  presentationDuration: element.presentationDuration + 3,
+}));
 
 assert.deepStrictEqual(updatedDuration,
   [
