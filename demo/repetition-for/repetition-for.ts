@@ -16,3 +16,44 @@
 //
 // Useful links:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+
+for (let i = 1; i <= 5; i++) {
+    console.log(`${i}`);
+}
+
+for (let i = 5; i > 0; i--) {
+    console.log(`${i}`);
+}
+
+for (let i = 1; i <= 10000; i++) {
+    console.log(`${i}`);
+    if (i === 3) {
+        break;
+    }
+}
+
+// Output:
+//
+// 1 - element
+// 2 - element
+// 3 element was skipped
+// 4 - element
+// 5 - element
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) {
+      console.log(`${i} element was skipped`);
+        continue;
+    }
+    console.log(`${i} - element`);
+}
+
+const letters = ["a", "b", "c"];
+for (let i = 0; i < letters.length; i++) {
+    console.log(letters[i]);
+}
+// All except the last one
+const caps = ["a", "b", "c"];
+for (let i = 0; i < caps.length - 1; i++) {
+    console.log(caps[i]);
+}
+
